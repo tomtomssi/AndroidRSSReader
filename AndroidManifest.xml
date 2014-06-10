@@ -13,6 +13,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SingleItem"></activity>
+        <activity android:name=".DisplaySingleItem"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

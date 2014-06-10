@@ -24,6 +24,7 @@ public class Main extends Activity{
      * Called when the activity is first created.
      */
 
+
     ListView listView;
     Intent singleItemIntet;
     XmlReader reader;
@@ -34,6 +35,7 @@ public class Main extends Activity{
         setContentView(R.layout.main);
         reader = new XmlReader();
         initialize(reader);
+
     }
 
     private void initialize(XmlReader reader) {
@@ -56,7 +58,7 @@ public class Main extends Activity{
     }
 
     private void initializeIntents() {
-        Intent intent = new Intent(getApplicationContext(), SingleItem.class);
+        Intent intent = new Intent(getApplicationContext(), DisplaySingleItem.class);
         this.singleItemIntet = intent;
     }
 
