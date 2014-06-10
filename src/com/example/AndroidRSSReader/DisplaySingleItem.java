@@ -3,21 +3,35 @@ package com.example.AndroidRSSReader;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import org.w3c.dom.NodeList;
+import android.webkit.WebView;
+import android.widget.TextView;
 
-/**
- * Created by Tatu on 10.6.2014.
- */
-public class DisplaySingleItem extends Activity{
-    private NodeList rootNodes;
+public class DisplaySingleItem extends Activity {
+    private TextView textViewTitle;
+    private WebView webView;
+    private Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.layout_single_item);
+        intent = getIntent();
         initialize();
     }
 
-    private void initialize(){
-        Intent intent = getIntent();
+    private void initialize() {
+        initializeComponents();
+    }
+
+    private void initializeComponents() {
+        textViewTitle = (TextView) this.findViewById(R.id.textViewTitle);
+        webView = (WebView) this.findViewById(R.id.webViewSingleItemData);
+        populateComponents();
+    }
+
+    private void populateComponents() {
         this.setTitle(intent.getStringExtra("PUBLISH_DATE"));
+        textViewTitle.setText(intent.getStringExtra("TITLE"));
+        webView.loadUrl(intent.getStringExtra("LINK"));
     }
 }

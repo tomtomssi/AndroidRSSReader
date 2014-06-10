@@ -2,28 +2,16 @@ package com.example.AndroidRSSReader;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import org.w3c.dom.NodeList;
-import org.xml.sax.XMLReader;
 
-import java.util.ArrayList;
-
-//TODO Layout for
-//TODO Add data from XML to
-//TODO Create WebView and show data from extracted XML link tag on
 public class Main extends Activity{
     /**
      * Called when the activity is first created.
      */
-
 
     ListView listView;
     Intent singleItemIntet;
@@ -35,7 +23,6 @@ public class Main extends Activity{
         setContentView(R.layout.main);
         reader = new XmlReader();
         initialize(reader);
-
     }
 
     private void initialize(XmlReader reader) {
