@@ -26,10 +26,6 @@ public class XmlReader {
 
     private NodeList rootNodes;
 
-    public NodeList getRootNodes() {
-        return rootNodes;
-    }
-
     public ArrayList<String> getTitleValues() {
         return titleValues;
     }
@@ -86,13 +82,14 @@ public class XmlReader {
 
     private static class XmlParser implements TagNames {
         private static NodeList parseXML(Document document) {
-            NodeList nodeList = document.getElementsByTagName(ITEM);
+            NodeList nodeList = document.getElementsByTagName(TITLE);
             return nodeList;
         }
 
         private static ArrayList<String> getTitleValues(final NodeList nodeList) {
             ArrayList list = new ArrayList() {{
-                for (int i = 0, isize = nodeList.getLength(); i < isize; ++i) {
+                //Add 2 to skip unnecessary items
+                for (int i = 2, isize = nodeList.getLength() - 2; i < isize; ++i) {
                     add(nodeList.item(i).getTextContent());
                 }
             }};
@@ -102,6 +99,8 @@ public class XmlReader {
         private static String getNodeValueByOperator(int identifier, Operators operator, Document document) {
             String result = "";
             NodeList nodeList;
+            //Add 2 to skip unnecessary items
+            identifier = identifier + 2;
             switch (operator) {
                 case ITEM:
                     nodeList = document.getElementsByTagName(ITEM);
