@@ -16,9 +16,9 @@ import org.xml.sax.XMLReader;
 
 import java.util.ArrayList;
 
-//TODO Layout for SingleItem.java
-//TODO Add data from XML to SingleItem.java
-//TODO Create WebView and show data from extracted XML link tag on SingleItem.java
+//TODO Layout for
+//TODO Add data from XML to
+//TODO Create WebView and show data from extracted XML link tag on
 public class Main extends Activity{
     /**
      * Called when the activity is first created.
